@@ -260,7 +260,6 @@ if __name__ == '__main__':
     num_gravs = 16
     gs = [[np.cos(k * np.pi / (num_gravs // 2)), np.sin(k * np.pi / (num_gravs // 2))] for k in range(num_gravs)]
     gs = np.array(gs)[[0, 4, 8, 12], :]
-
     # Set up files
     np.random.seed(321)
 
@@ -270,7 +269,7 @@ if __name__ == '__main__':
         g_x, g_y = np.array(g) * g_range
         print(f"=> Idx {idx}, Gravity Range: {g_range}")
         print(f"=> Gx {g_x} Gy {g_y}")
-        cannon = BallBox(dt=0.25, res=(32 * scale, 32 * scale), init_pos=(16 * scale, 16 * scale), init_std=8, wall=None, gravity=(g_x, g_y))
+        cannon = BallBox(dt=0.2, res=(32 * scale, 32 * scale), init_pos=(16 * scale, 16 * scale), init_std=8, wall=None, gravity=(g_x, g_y))
         i, s = cannon.run(delay=None, iterations=num_timesteps, sequences=total_size + 2000, radius=3 * scale, angle_limits=(0, 360), velocity_limits=(vel_min, vel_max), save='npz')
 
         i = (i > 0).astype(float)
@@ -328,7 +327,7 @@ if __name__ == '__main__':
         [4, 5, 6, 7, 8, 9, 10, 11]
     ):
         num_steps = 30
-        dt = 0.1
+        dt = 0.2
         steps_per_dt = 1
 
         num_train = 3000

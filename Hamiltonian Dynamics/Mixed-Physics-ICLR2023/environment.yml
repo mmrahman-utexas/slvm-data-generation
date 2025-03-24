@@ -1,4 +1,4 @@
-name: pendulum
+name: mp23
 channels:
   - conda-forge
   - defaults
@@ -37,7 +37,6 @@ dependencies:
       - contourpy==1.2.1
       - cycler==0.12.1
       - dill==0.3.8
-      - dm-hamiltonian-dynamics-suite==0.0.1
       - flatbuffers==1.12
       - fonttools==4.53.0
       - future==1.0.0
